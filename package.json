@@ -2,9 +2,21 @@
   "name": "plugdation",
   "version": "1.0.0",
   "description": "A starter foundation for your wordpress plugin",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format:js": "wp-scripts format-js",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:md:js": "wp-scripts lint-md-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +33,11 @@
   "bugs": {
     "url": "https://github.com/m-boswell/plugdation/issues"
   },
-  "homepage": "https://github.com/m-boswell/plugdation#readme"
+  "homepage": "https://github.com/m-boswell/plugdation#readme",
+  "devDependencies": {
+    "@wordpress/components": "^9.0.0",
+    "@wordpress/editor": "^9.10.0",
+    "@wordpress/element": "^2.10.0",
+    "@wordpress/scripts": "^6.2.0"
+  }
 }
