@@ -1,0 +1,19 @@
+{
+    "name": "plugdation/plugdation",
+    "description": "A starter foundation for your wordpress plugin",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Boswell",
+            "email": "mboswell2@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Plugdation\\Plugdation": "inc",
+            "Plugdation\\src": "src"
+        }
+    },
+    "require": {}
+}
