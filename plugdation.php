@@ -19,10 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 }
 
+require_once __DIR__ . './vendor/autoload.php';
+include_once __DIR__ . './src/index.php';
+
+
 /**
  * Class Plugdation
  */
-class Plugdation {
+class Plugdation implements \Plugdation\Plugdation\utils\hooked {
+
 
     /**
      * Plugdation constructor.
@@ -31,4 +36,20 @@ class Plugdation {
     {
 
     }
+
+	/**
+	 * @inheritDoc
+	 */
+	public function hook_into_wordpress(): void {
+		$asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
+		wp_enqueue_script(
+			'plugdation-blocks',
+			plugins_url('build/index.js', __File__),
+			$asset_file['dependencies'],
+			$asset_file['version'],
+			true
+		);
+	}
 }
+
+add_filter('the_content', 'wpautop');
