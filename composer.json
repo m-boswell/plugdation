@@ -12,7 +12,8 @@
     "autoload": {
         "psr-4": {
             "Plugdation\\Plugdation\\": "inc",
-            "Plugdation\\blocks\\": "src/blocks"
+            "Plugdation\\blocks\\": "src/blocks",
+            "Plugdation\\tests\\": "tests"
         }
     },
     "require": {}

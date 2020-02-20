@@ -4,7 +4,9 @@
 namespace Plugdation\Plugdation\assets;
 
 
-abstract class Asset
+use Plugdation\Plugdation\hooks\actions;
+
+abstract class Asset implements actions
 {
     /**
      * @var string
@@ -49,4 +51,14 @@ abstract class Asset
 
     abstract function registerAsset();
 
+    /**
+     * @inheritDoc
+     */
+    public function getActions()
+    {
+        return array(
+            $this->handle => 'registerAsset'
+        );
+    }
+    
 }

@@ -1,2 +1,3 @@
 <?php
-include __DIR__ . './blocks/sample.php';
+//include __DIR__ . './blocks/sample.php';
+

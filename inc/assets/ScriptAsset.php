@@ -6,7 +6,6 @@ namespace Plugdation\Plugdation\assets;
 
 
 
-use Plugdation\Plugdation\hooks\actions;
 
 class ScriptAsset extends Asset
 {
@@ -30,7 +29,7 @@ class ScriptAsset extends Asset
         $this->inFooter = $inFooter;
     }
 
-    public function registerAsset(){
+    public function registerAsset() {
         wp_register_script(
             $this->handle,
             $this->src,

@@ -34,11 +34,9 @@ class RegisterHooks {
 	 * @param string  $action_name
 	 * @param array   $arguments
 	 */
-	private function registerAction( actions $object, $action_name, array $arguments ) {
+	private function registerAction( actions $object, string $action_name, array $arguments ) {
 		if (!isset($arguments[0])) { return; }
-		if (!isset($arguments[1])) { $arguments[1] = 10; }
-		if (!isset($arguments[2])) { $arguments[2] = 1; }
-		add_action($action_name, array($object, $arguments[0]), $arguments[1], $arguments[2]);
+		add_action($action_name, array($object, $arguments[0]), $arguments[1] ?? 10, $arguments[2] ?? 1);
 	}
 
 	/**
@@ -59,11 +57,9 @@ class RegisterHooks {
 	 * @param   string    $filter_name
 	 * @param   array     $arguments
 	 */
-	private function registerFilter( filters $object, $filter_name, array $arguments ) {
+	private function registerFilter( filters $object, string $filter_name, array $arguments ) {
 		if (!isset($arguments[0])) { return; }
-		if (!isset($arguments[1])) { $arguments[1] = 10; }
-		if (!isset($arguments[2])) { $arguments[2] = 1; }
-		add_filter($filter_name, array($object, $arguments[0]), $arguments[1], $arguments[2]);
+		add_filter($filter_name, array($object, $arguments[0]), $arguments[1] ?? 10, $arguments[2] ?? 1);
 	}
 
 	/**
