@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Plugdation\Plugdation\utils\gutenberg;
+namespace Plugdation\Plugdation\gutenberg;
 
 //todo consider extending this class with WP_Block_Type
 use Plugdation\Plugdation\hooks\actions;

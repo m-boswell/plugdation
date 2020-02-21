@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Plugdation\Plugdation\utils;
+namespace Plugdation\Plugdation\templating;
 
 /**
  * Interface markup
- * @package Plugdation\Plugdation\utils
+ * @package Plugdation\Plugdation\templating
  */
 interface markup {
 

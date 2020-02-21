@@ -1,9 +1,12 @@
 <?php
 
 
-namespace Plugdation\Plugdation\utils;
+namespace Plugdation\Plugdation\templating;
 
-
+/**
+ * Class Render
+ * @package Plugdation\Plugdation\templating
+ */
 abstract class Render implements markup {
 
 	/**
