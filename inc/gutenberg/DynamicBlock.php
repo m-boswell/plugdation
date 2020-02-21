@@ -4,7 +4,7 @@
 namespace Plugdation\Plugdation\gutenberg;
 
 
-use Plugdation\Plugdation\utils\gutenberg\Block;
+use Plugdation\Plugdation\gutenberg\Block;
 
 abstract class DynamicBlock extends Block
 {

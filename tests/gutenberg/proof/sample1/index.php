@@ -4,7 +4,7 @@
 use Plugdation\Plugdation\assets\ScriptAsset;
 use Plugdation\Plugdation\assets\StyleAsset;
 use Plugdation\Plugdation\hooks\RegisterHooks;
-use Plugdation\Plugdation\utils\gutenberg\Block;
+use Plugdation\Plugdation\gutenberg\Block;
 
 $Register_Hooks = new RegisterHooks();
 $Script_Asset = new ScriptAsset('test-block', 'tests/gutenberg/proof/sample1/index.js');
