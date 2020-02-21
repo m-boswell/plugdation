@@ -20,36 +20,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once __DIR__ . './vendor/autoload.php';
+//require_once __DIR__ . './inc/constants.php';                     //not currently being used.
 include_once __DIR__ . './src/index.php';
+include_once __DIR__ . './tests/proofs.php';                        //testing proof of concepts.
 
 
-/**
- * Class Plugdation
- */
-class Plugdation implements \Plugdation\Plugdation\utils\hooked {
 
-
-    /**
-     * Plugdation constructor.
-     */
-    public function __construct()
-    {
-
-    }
-
-	/**
-	 * @inheritDoc
-	 */
-	public function hook_into_wordpress(): void {
-		$asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
-		wp_enqueue_script(
-			'plugdation-blocks',
-			plugins_url('build/index.js', __File__),
-			$asset_file['dependencies'],
-			$asset_file['version'],
-			true
-		);
-	}
-}
-
-add_filter('the_content', 'wpautop');
+///**
+// * Class Plugdation
+// */
+//class Plugdation {
+//
+//
+//    /**
+//     * Plugdation constructor.
+//     */
+//    public function __construct()
+//    {
+//
+//    }
+//
+//	/**
+//	 * @inheritDoc
+//	 */
+//	public function hook_into_wordpress(): void {
+//		$asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
+//		wp_enqueue_script(
+//			'plugdation-blocks',
+//			plugins_url('build/index.js', __File__),
+//			$asset_file['dependencies'],
+//			$asset_file['version'],
+//			true
+//		);
+//	}
+//}
+//
+//add_filter('the_content', 'wpautop');

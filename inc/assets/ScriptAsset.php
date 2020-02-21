@@ -12,7 +12,7 @@ class ScriptAsset extends Asset
     /**
      * @var bool
      */
-    private $inFooter;
+    protected $inFooter;
 
     /**
      * ScriptAsset constructor.

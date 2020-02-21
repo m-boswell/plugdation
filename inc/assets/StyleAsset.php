@@ -9,7 +9,7 @@ class StyleAsset extends Asset
     /**
      * @var bool
      */
-    private $media;
+    protected $media;
 
     /**
      * ScriptAsset constructor.

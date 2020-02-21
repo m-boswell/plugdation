@@ -2,12 +2,16 @@
 
 
 namespace Plugdation\Plugdation\assets;
-
+require_once __DIR__ . './../constants.php';
 
 use Plugdation\Plugdation\hooks\actions;
 
 abstract class Asset implements actions
 {
+    /**
+     * string
+     */
+    protected $tag = 'init';
     /**
      * @var string
      */
@@ -25,6 +29,11 @@ abstract class Asset implements actions
      * @var string
      */
     protected $version;
+    /**
+     * @var string
+     */
+    private $dir = PLUGIN_PATH;
+
 
     /**
      * Assets constructor.
@@ -36,9 +45,9 @@ abstract class Asset implements actions
     public function __construct($handle, $src, array $deps = array(), $version = '')
     {
         $this->handle = $handle;
-        $this->src = $src;
+        $this->src = PLUGIN_URL . "/$src" ;
         $this->deps = $deps;
-        $this->version = $version ?? filemtime($src);
+        $this->version = $version ?? filemtime( PLUGIN_PATH . DIRECTORY_SEPARATOR  .  $src );
     }
 
     /**
@@ -57,8 +66,8 @@ abstract class Asset implements actions
     public function getActions()
     {
         return array(
-            $this->handle => 'registerAsset'
+            $this->tag => ['registerAsset']
         );
     }
-    
+
 }

@@ -14,53 +14,57 @@ class Block implements actions
      *
      * @var string
      */
-    public $name;
+    protected $name;
 
     /**
      * Block type render callback.
      *
      * @var callable
      */
-    public $render_callback;
+    protected $render_callback;
 
     /**
      * Block type attributes property schemas.
      *
      * @var array
      */
-    public $attributes;
+    protected $attributes;
 
     /**
      * Block type editor script handle.
      *
      * @var string
      */
-    public $editor_script;
+    protected $editor_script;
 
     /**
      * Block type front end script handle.
      *
      * @var string
      */
-    public $script;
+    protected $script;
 
     /**
      * Block type editor style handle.
      *
      * @var string
      */
-    public $editor_style;
+    protected $editor_style;
 
     /**
      * Block type front end style handle.
      *
      * @var string
      */
-    public $style;
+    protected $style;
 
-
-    public function __construct( $block_type, $args = array() ) {
-        $this->name = $block_type;
+    /**
+     * Block constructor.
+     * @param string $name
+     * @param string $editor_script
+     */
+    public function __construct( string $name ) {
+        $this->name = $name;
     }
 
     /**
@@ -121,10 +125,18 @@ class Block implements actions
 
     public function registerBlockType()
     {
+        // Skip block registration if Gutenberg is not enabled/merged.
+        if ( ! function_exists( 'register_block_type' ) ) {
+            return;
+        }
+        
         register_block_type( $this->name, array(
-            'editor_script' => $this->editor_script,
-            'editor_style'  => $this->editor_style,
-            'style'         => $this->style,
+            'editor_script'     =>  $this->editor_script,
+            'editor_style'      =>  $this->editor_style ?? '',
+            'style'             =>  $this->style ?? '',
+            'script'            =>  $this->script ?? '',
+            'attributes'        =>  $this->attributes ?? '',
+            'render_callback'   =>  $this->render_callback ?? ''
         ) );
     }
 
@@ -134,7 +146,7 @@ class Block implements actions
     public function getActions()
     {
         return array(
-            'sample_block_init' => 'registerBlockType'
+            'init' => ['registerBlockType']
         );
     }
 
