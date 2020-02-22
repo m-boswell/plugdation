@@ -3,9 +3,12 @@
 
 namespace Plugdation\Plugdation\gutenberg;
 
-//todo consider extending this class with WP_Block_Type
 use Plugdation\Plugdation\hooks\actions;
 
+/**
+ * Class Block
+ * @package Plugdation\Plugdation\gutenberg
+ */
 class Block implements actions
 {
 
@@ -15,20 +18,6 @@ class Block implements actions
      * @var string
      */
     protected $name;
-
-    /**
-     * Block type render callback.
-     *
-     * @var callable
-     */
-    protected $render_callback;
-
-    /**
-     * Block type attributes property schemas.
-     *
-     * @var array
-     */
-    protected $attributes;
 
     /**
      * Block type editor script handle.
@@ -59,69 +48,47 @@ class Block implements actions
     protected $style;
 
     /**
+     * Block type render callback.
+     *
+     * @var callable
+     */
+    protected $render_callback;
+
+    /**
+     * Block type attributes property schemas.
+     *
+     * @var array
+     */
+    protected $attributes;
+
+    /**
      * Block constructor.
      * @param string $name
-     * @param string $editor_script
+     * @param string|null $editor_script
+     * @param string|null $script
+     * @param string|null $editor_style
+     * @param string|null $style
+     * @param callable|null $render_callback
+     * @param array|null $attributes
      */
-    public function __construct( string $name ) {
+    public function __construct(
+    	string $name,
+	    ?string $editor_script = null,
+	    ?string $script = null,
+	    ?string $editor_style = null,
+	    ?string $style = null,
+	    ?callable $render_callback = null,
+	    ?array $attributes = null
+    ) {
         $this->name = $name;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName(string $name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @param callable $render_callback
-     */
-    public function setRenderCallback(callable $render_callback)
-    {
+        $this->editor_script = $editor_script;
+        $this->script = $script;
+        $this->editor_style = $editor_style;
+        $this->style = $style;
         $this->render_callback = $render_callback;
-    }
-
-    /**
-     * @param array $attributes
-     */
-    public function setAttributes(array $attributes)
-    {
         $this->attributes = $attributes;
     }
 
-    /**
-     * @param string $editor_script
-     */
-    public function setEditorScript(string $editor_script)
-    {
-        $this->editor_script = $editor_script;
-    }
-
-    /**
-     * @param string $script
-     */
-    public function setScript(string $script)
-    {
-        $this->script = $script;
-    }
-
-    /**
-     * @param string $editor_style
-     */
-    public function setEditorStyle(string $editor_style)
-    {
-        $this->editor_style = $editor_style;
-    }
-
-    /**
-     * @param string $style
-     */
-    public function setStyle(string $style)
-    {
-        $this->style = $style;
-    }
 
     public function registerBlockType()
     {
@@ -129,7 +96,7 @@ class Block implements actions
         if ( ! function_exists( 'register_block_type' ) ) {
             return;
         }
-        
+
         register_block_type( $this->name, array(
             'editor_script'     =>  $this->editor_script,
             'editor_style'      =>  $this->editor_style ?? '',
