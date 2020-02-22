@@ -9,9 +9,8 @@ use Plugdation\Plugdation\gutenberg\DynamicBlock;
 class DynamicSampleBlock extends DynamicBlock
 {
 
-    public function __construct(string $name)
+    protected function setAttributes()
     {
-        parent::__construct($name);
         $this->attributes = array(
             'myMessage' => array(
                 'type' => 'String',
@@ -19,10 +18,11 @@ class DynamicSampleBlock extends DynamicBlock
             )
         );
     }
-
-
+    
     public function dynamic_render_callback($attributes, $content)
     {
         return "<p>{$attributes['myMessage']}</p>";
     }
+
+    
 }
