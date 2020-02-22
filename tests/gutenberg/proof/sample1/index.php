@@ -3,8 +3,8 @@
 
 use Plugdation\Plugdation\assets\ScriptAsset;
 use Plugdation\Plugdation\assets\StyleAsset;
+use Plugdation\Plugdation\gutenberg\BlockBuilder;
 use Plugdation\Plugdation\hooks\RegisterHooks;
-use Plugdation\Plugdation\gutenberg\Block;
 
 $Register_Hooks = new RegisterHooks();
 $Script_Asset = new ScriptAsset('test-block', 'tests/gutenberg/proof/sample1/index.js');
@@ -20,27 +20,12 @@ $Register_Hooks->register($Editor_Asset);
 $Register_Hooks->register($Script_Front_Asset);
 
 
-$Block = new Block('plugdation/sample');
-$Block->setEditorScript($Script_Asset->getHandle());
-$Block->setEditorStyle($Editor_Asset->getHandle());
-$Block->setScript($Script_Front_Asset->getHandle());
-$Block->setStyle($Style_Asset->getHandle());
+$Block = ( new BlockBuilder() )
+    ->setName('plugdation/sample')
+    ->setEditorScript($Script_Asset->getHandle())
+    ->setEditorStyle($Editor_Asset->getHandle())
+    ->setScript($Script_Front_Asset->getHandle())
+    ->setStyle($Style_Asset->getHandle())
+    ->build();
+
 $Register_Hooks->register($Block);
-
-
-
-//function sample_block_init() {
-//    // Skip block registration if Gutenberg is not enabled/merged.
-//    if ( ! function_exists( 'register_block_type' ) ) {
-//        return;
-//    }
-//
-//    register_block_type( 'plugdation/sample', array(
-//        'editor_script' => 'test-block',
-//        'editor_style'  => 'test-block-frontend',
-//        'style'         => 'test-block-editor',
-//        'script'        => 'test-block-frontend',
-//        'render_callback' =>  ''
-//    ) );
-//}
-//add_action( 'init', 'sample_block_init' );
