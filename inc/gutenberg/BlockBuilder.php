@@ -117,6 +117,7 @@ class BlockBuilder
         );
     }
 
+    //todo do file checking if in debug mode.
     public static function glob($namespace, $block_name, $dir, $config = array(
         'editor_script' => true,
         'editor_style' => true,
