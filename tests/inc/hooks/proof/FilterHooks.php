@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Plugdation\tests\hooks\proof;
+namespace Plugdation\tests\inc\hooks\proof;
 
 
 use Plugdation\Plugdation\hooks\filters;
@@ -11,7 +11,7 @@ class FilterHooks implements filters
 
     public function filterExample( $content ) {
 
-        $content = '<p>It has been decreed that hence forth:  </p>' .  $content;
+        $content = '<p>It has been decreed that hence forth:  </p>' .  $content . '<p> ...testing hook component  </p>';
 
         return $content;
 

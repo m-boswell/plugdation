@@ -14,7 +14,13 @@ License URI:  https://opensource.org/licenses/MIT
 // disable direct file access
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-require_once __DIR__ . './vendor/autoload.php';
-//require_once __DIR__ . './inc/constants.php';                     //not currently being used.
-include_once __DIR__ . './app/index.php';
-//include_once __DIR__ . './tests/proofs.php';                        //testing proof of concepts.
+require_once __DIR__ . './vendor/autoload.php';                 // composer PSR-4 autoload
+require_once __DIR__ . './inc/constants.php';                   // plugin constants.
+include_once __DIR__ . './app/index.php';                       // main plugin folder.
+
+
+
+
+
+// Uncomment to test proof of concepts
+// include_once __DIR__ . './tests/proofs.php';

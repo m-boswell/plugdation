@@ -1,1 +1,1 @@
-console.log('testing front end scripts');
+console.log('testing front end scripts for test block sample 1');

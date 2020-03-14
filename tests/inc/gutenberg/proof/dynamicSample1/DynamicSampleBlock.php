@@ -1,11 +1,17 @@
 <?php
 
 
-namespace Plugdation\tests\gutenberg\proof\dynamicSample1;
+namespace Plugdation\tests\inc\gutenberg\proof\dynamicSample1;
 
 
 use Plugdation\Plugdation\gutenberg\DynamicBlock;
 
+/**
+ * Class DynamicSampleBlock
+ * Example of a dynamic block being made with a concrete class.
+ * 
+ * @package Plugdation\tests\inc\gutenberg\proof\dynamicSample1
+ */
 class DynamicSampleBlock extends DynamicBlock
 {
 

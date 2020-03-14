@@ -19,7 +19,7 @@
 	 * Every block starts by registering a new block type definition.
 	 * @see https://wordpress.org/gutenberg/handbook/block-api/
 	 */
-	registerBlockType( 'plugdation/sample', {
+	registerBlockType( 'plugdation/sample1', {
 		/**
 		 * This is the display title for your block, which can be translated with `i18n` functions.
 		 * The block inserter will show this name.

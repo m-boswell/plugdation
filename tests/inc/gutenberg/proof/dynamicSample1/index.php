@@ -1,11 +1,10 @@
 <?php
 
+namespace Plugdation\tests\inc\gutenberg\proof\dynamicSample1;
 
 use Plugdation\Plugdation\assets\ScriptAsset;
 use Plugdation\Plugdation\assets\StyleAsset;
-use Plugdation\Plugdation\gutenberg\BlockBuilder;
 use Plugdation\Plugdation\hooks\RegisterHooks;
-use Plugdation\tests\gutenberg\proof\dynamicSample1\DynamicSampleBlock;
 
 /**
  * Config
@@ -17,15 +16,19 @@ $editor_style = 'test-dynamicSample-block-editor';
 $style = 'test-dynamicSample-block-frontend';
 
 
-
+/**
+ * Enqueuing Assets
+ */
 $Register_Hooks = new RegisterHooks();
-$Script_Asset = new ScriptAsset( $editor_script, 'tests/gutenberg/proof/dynamicSample1/index.js');
-$Editor_Asset = new StyleAsset($editor_style, 'tests/gutenberg/proof/dynamicSample1/editor.css');
-$Script_Front_Asset = new ScriptAsset($script, 'tests/gutenberg/proof/dynamicSample1/front.js');
-$Style_Asset = new StyleAsset($style, 'tests/gutenberg/proof/dynamicSample1/style.css');
+$Script_Asset = new ScriptAsset( $editor_script, 'tests/inc/gutenberg/proof/dynamicSample1/index.js');
+$Editor_Asset = new StyleAsset($editor_style, 'tests/inc/gutenberg/proof/dynamicSample1/editor.css');
+$Script_Front_Asset = new ScriptAsset($script, 'tests/inc/gutenberg/proof/dynamicSample1/front.js');
+$Style_Asset = new StyleAsset($style, 'tests/inc/gutenberg/proof/dynamicSample1/style.css');
 
 
-
+/**
+ * Register Assets
+ */
 $Register_Hooks->register($Script_Asset);
 $Register_Hooks->register($Style_Asset);
 $Register_Hooks->register($Editor_Asset);

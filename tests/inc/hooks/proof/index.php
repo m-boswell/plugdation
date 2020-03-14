@@ -1,8 +1,9 @@
 <?php
 
+namespace Plugdation\tests\inc\hooks\proof;
 
 use Plugdation\Plugdation\hooks\RegisterHooks;
-use Plugdation\tests\hooks\proof\FilterHooks;
+
 
 
 $Filter_Test = new FilterHooks();
