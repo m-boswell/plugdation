@@ -52,7 +52,7 @@
 			return el(
 				'p',
 				{ className: props.className },
-				__( 'Hello from the editor!', 'plugdation' )
+				__( 'Hello from the editor, I am plugdation from app!', 'plugdation' )
 			);
 		},
 

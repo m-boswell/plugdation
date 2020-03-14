@@ -1,6 +1,10 @@
 <?php
 
-//namespace Plugdation\blocks\sample;
+namespace Plugdation\app\blocks;
+
+// disable direct file access
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 /**
  * Functions to register client-side assets (scripts and stylesheets) for the
  * Gutenberg block.
@@ -21,7 +25,7 @@ function sample_block_init() {
 	}
 	$dir = dirname( __FILE__ );
 
-	$index_js = 'sample/index.js';
+	$index_js = 'assets/index.js';
 	wp_register_script(
 		'sample-block-editor',
 		plugins_url( $index_js, __FILE__ ),
@@ -33,7 +37,7 @@ function sample_block_init() {
 		filemtime( "$dir/$index_js" )
 	);
 
-	$editor_css = 'sample/editor.css';
+	$editor_css = 'assets/editor.css';
 	wp_register_style(
 		'sample-block-editor',
 		plugins_url( $editor_css, __FILE__ ),
@@ -41,7 +45,7 @@ function sample_block_init() {
 		filemtime( "$dir/$editor_css" )
 	);
 
-	$style_css = 'sample/style.css';
+	$style_css = 'assets/style.css';
 	wp_register_style(
 		'sample-block',
 		plugins_url( $style_css, __FILE__ ),
@@ -55,4 +59,4 @@ function sample_block_init() {
 		'style'         => 'sample-block',
 	) );
 }
-add_action( 'init', 'sample_block_init' );
+add_action( 'init', __NAMESPACE__ . DIRECTORY_SEPARATOR .'sample_block_init' );
