@@ -10,5 +10,5 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * It is best practice to separate code into directories and then include them here.
  */
 
-include __DIR__ . './blocks/index.php';
+include __DIR__ . './example/blocks/index.php';
 
