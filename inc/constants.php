@@ -15,4 +15,5 @@ define("_THIS_PATH", dirname(__FILE__));
 define("PLUGIN_DIR", dirname(_THIS_PATH));
 define("PLUGIN_PATH", PLUGIN_DIR);
 define("PLUGIN_URL", plugins_url(PLUGIN_NAME, PLUGIN_PATH));
-
+define("BUILD_PATH", PLUGIN_DIR . DIRECTORY_SEPARATOR . 'build');
+define("BUILD_URL", plugins_url(PLUGIN_NAME, PLUGIN_DIR) . '/build' );
