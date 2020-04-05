@@ -33,16 +33,13 @@ function sampleJsxBlockInit()
         return;
     }
 
+    $asset_file = include( BUILD_PATH . '/index.asset.php');
+
     wp_register_script(
         'sample-jsx-block-editor',
         BUILD_URL . '/index.js',
-        array(
-            'wp-blocks',
-            'wp-i18n',
-            'wp-element',
-            'wp-editor'
-        ),
-        filemtime(BUILD_PATH . '/index.js')
+        $asset_file['dependencies'],
+        $asset_file['version']
     );
 
     register_block_type('plugdation/sample-jsx', array(
