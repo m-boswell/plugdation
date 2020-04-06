@@ -20,7 +20,7 @@ use Plugdation\Plugdation\hooks\RegisterHooks;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 require_once __DIR__ . './vendor/autoload.php';                 // composer PSR-4 autoload
-require_once __DIR__ . './inc/constants.php';                   // plugin constants.
+require_once __DIR__ . './inc/config.php';                   // plugin constants.
 include_once __DIR__ . './app/index.php';                       // main plugin folder.
 
 
