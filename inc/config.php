@@ -1,19 +1,25 @@
 <?php
-/**
- * plugin constants
- */
-define("PLUGIN_NAME", 'plugdation');
-define("PLUGIN_MAIN_FILE", 'plugdation.php');
+namespace Plugdation\Plugdation;
+
+const PLUGIN_NAME = 'plugdation';
 
 /**
- * Assign file paths.
+ * Private global file paths.
  *
+ * * global constants used with define() are defined at runtime, thus they can use functions as values.
  * * __FILE__ The full path and filename of the file
  * * dirname() Returns a parent directory's path
+ * * plugins_url() Retrieves a URL within the plugins or mu-plugins directory.
  */
-define("_THIS_PATH", dirname(__FILE__));
-define("PLUGIN_DIR", dirname(_THIS_PATH));
-define("PLUGIN_PATH", PLUGIN_DIR);
-define("PLUGIN_URL", plugins_url(PLUGIN_NAME, PLUGIN_PATH));
-define("BUILD_PATH", PLUGIN_DIR . DIRECTORY_SEPARATOR . 'build');
-define("BUILD_URL", plugins_url(PLUGIN_NAME, PLUGIN_DIR) . '/build' );
+define('_PLUGDATION_THIS_PATH', dirname(__FILE__));
+define('_PLUGDATION_PLUGIN_DIR', dirname(_PLUGDATION_THIS_PATH));
+define('_PLUGDATION_PLUGIN_URL', plugins_url(PLUGIN_NAME, _PLUGDATION_PLUGIN_DIR));
+
+/**
+ * public namespaced constants.
+ */
+const PLUGIN_MAIN_FILE = 'plugdation.php';
+const PLUGIN_DIR = _PLUGDATION_PLUGIN_DIR;
+const PLUGIN_URL = _PLUGDATION_PLUGIN_URL;
+const BUILD_PATH =  PLUGIN_DIR . DIRECTORY_SEPARATOR . 'build';
+const BUILD_URL = PLUGIN_URL . '/' . 'build';

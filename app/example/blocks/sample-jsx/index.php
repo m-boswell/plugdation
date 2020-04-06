@@ -33,11 +33,11 @@ function sampleJsxBlockInit()
         return;
     }
 
-    $asset_file = include( BUILD_PATH . '/index.asset.php');
+    $asset_file = include( \Plugdation\Plugdation\BUILD_PATH . DIRECTORY_SEPARATOR . 'index.asset.php');
 
     wp_register_script(
         'sample-jsx-block-editor',
-        BUILD_URL . '/index.js',
+        \Plugdation\Plugdation\BUILD_URL . '/index.js',
         $asset_file['dependencies'],
         $asset_file['version']
     );
@@ -47,4 +47,4 @@ function sampleJsxBlockInit()
     ));
 }
 
-add_action('init', __NAMESPACE__ . DIRECTORY_SEPARATOR . 'sampleJsxBlockInit');
+add_action('init', __NAMESPACE__ . '\\' . 'sampleJsxBlockInit');

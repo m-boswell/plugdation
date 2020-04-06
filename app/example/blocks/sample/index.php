@@ -59,4 +59,4 @@ function sample_block_init() {
 		'style'         => 'sample-block',
 	) );
 }
-add_action( 'init', __NAMESPACE__ . DIRECTORY_SEPARATOR .'sample_block_init' );
+add_action( 'init', __NAMESPACE__ . '\\' .'sample_block_init' );

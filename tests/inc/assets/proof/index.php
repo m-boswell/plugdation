@@ -17,4 +17,4 @@ function my_enqueue_assets() {
     wp_enqueue_style('asset-test');
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . DIRECTORY_SEPARATOR . 'my_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\' . 'my_enqueue_assets' );
