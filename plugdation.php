@@ -19,8 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 require_once __DIR__ . './vendor/autoload.php';                 // composer PSR-4 autoload.
 require_once __DIR__ . './inc/config.php';                      // plugin constants.
-require_once __DIR__ . './app/index.php';                       // main plugin folder.
 require_once __DIR__ . './inc/enqueue.php';                     // enqueuing assets.
+require_once __DIR__ . './app/index.php';                       // main plugin folder.
+
 
 
 // Uncomment to test proof of concepts

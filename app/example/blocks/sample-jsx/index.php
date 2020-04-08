@@ -33,17 +33,8 @@ function sampleJsxBlockInit()
         return;
     }
 
-    $asset_file = include( \Plugdation\Plugdation\BUILD_PATH . DIRECTORY_SEPARATOR . 'index.asset.php');
-
-    wp_register_script(
-        'sample-jsx-block-editor',
-        \Plugdation\Plugdation\BUILD_URL . '/index.js',
-        $asset_file['dependencies'],
-        $asset_file['version']
-    );
-
     register_block_type('plugdation/sample-jsx', array(
-        'editor_script' => 'sample-jsx-block-editor'
+        'editor_script' => 'plugdation-block-editor-assets'
     ));
 }
 

@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
     ...defaultConfig,
     entry: {
-        index: path.resolve( process.cwd(), 'src/blocks', 'index.js' ),
+        index: path.resolve( process.cwd(), 'src/blocks/block-editor-assets/', 'index.js' ),
     },
     output: {
         filename: '[name].js',
