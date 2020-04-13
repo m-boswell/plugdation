@@ -2,7 +2,7 @@
 namespace Plugdation\Plugdation;
 
 use Plugdation\Plugdation\assets\ScriptAsset;
-use Plugdation\Plugdation\assets\StyleAsset; //todo: get build implemented.
+use Plugdation\Plugdation\assets\StyleAsset;
 use Plugdation\Plugdation\hooks\RegisterHooks;
 
 $Register_Hooks = new RegisterHooks();
@@ -14,8 +14,20 @@ $Register_Hooks = new RegisterHooks();
  */
 
 /** Register Frontend Assets */
-$Frontend_Asset = new ScriptAsset('plugdation-frontend', 'src/frontend/index.js');
-$Register_Hooks->register($Frontend_Asset);
+// styles
+$Frontend_Style = new StyleAsset('plugdation-frontend', 'build/frontend/css/frontend.css');
+$Register_Hooks->register($Frontend_Style);
+
+// javascript
+$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
+    DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR .'frontend.asset.php');
+$Frontend_Script = new ScriptAsset(
+    'plugdation-frontend',
+    'build/frontend/js/frontend.js',
+    $asset_file['dependencies'],
+    $asset_file['version']
+);
+$Register_Hooks->register($Frontend_Script);
 
 /**
  * Enqueue Frontend Assets
@@ -23,10 +35,11 @@ $Register_Hooks->register($Frontend_Asset);
  * Fires when scripts and styles are enqueued for the front-end.
  * @see https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/
  */
-function enqueueAssets() {
+function enqueueFrontendAssets(){
     wp_enqueue_script('plugdation-frontend');
+    wp_enqueue_style('plugdation-frontend');
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\' . 'enqueueAssets' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\' . 'enqueueFrontendAssets' );
 
 
 
@@ -37,8 +50,20 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\' . 'enqueueAssets' );
  */
 
 /** Register Admin Assets */
-$Admin_Asset = new ScriptAsset('plugdation-admin', 'src/admin/index.js');
-$Register_Hooks->register($Admin_Asset);
+// styles
+$Admin_Style = new StyleAsset('plugdation-admin', 'build/admin/css/admin.css');
+$Register_Hooks->register($Admin_Style);
+
+// javascript
+$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
+    DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR. 'admin.asset.php');
+$Admin_Script = new ScriptAsset(
+    'plugdation-admin',
+    'build/admin/js/admin.js',
+    $asset_file['dependencies'],
+    $asset_file['version']
+);
+$Register_Hooks->register($Admin_Script);
 
 /**
  * Enqueue Admin Assets
@@ -48,6 +73,7 @@ $Register_Hooks->register($Admin_Asset);
  */
 function enqueueAdminAssets() {
     wp_enqueue_script('plugdation-admin');
+    wp_enqueue_style('plugdation-admin');
 }
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\' . 'enqueueAdminAssets' );
 
@@ -61,8 +87,20 @@ add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\' . 'enqueueAdminAssets'
  */
 
 /** Register Block Assets */
-$Block_Asset = new ScriptAsset('plugdation-block-assets', 'src/blocks/block-assets/index.js');
-$Register_Hooks->register($Block_Asset);
+// styles
+$Block_Style = new StyleAsset('plugdation-block-assets', 'build/block/css/block.css');
+$Register_Hooks->register($Block_Style);
+
+// javascript
+$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
+    DIRECTORY_SEPARATOR . 'block' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'block.asset.php');
+$Block_Script = new ScriptAsset(
+    'plugdation-block-assets',
+    'build/block/js/block.js',
+    $asset_file['dependencies'],
+    $asset_file['version']
+);
+$Register_Hooks->register($Block_Script);
 
 /**
  * Enqueue Block Assets
@@ -72,6 +110,7 @@ $Register_Hooks->register($Block_Asset);
  */
 function enqueueBlockAssets() {
     wp_enqueue_script('plugdation-block-assets');
+    wp_enqueue_style('plugdation-block-assets');
 }
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\' . 'enqueueBlockAssets' );
 
@@ -84,17 +123,22 @@ add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\' . 'enqueueBlockAssets' 
  * - - - - - - - - - - - - - - - - -
  */
 
-$asset_file = include( \Plugdation\Plugdation\BUILD_PATH . DIRECTORY_SEPARATOR . 'index.asset.php');
-
 /** Register Block Editor Assets */
-$Block_Editor_Asset = new ScriptAsset(
+// styles
+$Block_Editor_Style = new StyleAsset('plugdation-block-editor-assets', 'build/blockEditor/css/blockEditor.css');
+$Register_Hooks->register($Block_Editor_Style);
+
+// javascript
+$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
+    DIRECTORY_SEPARATOR . 'blockEditor' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR. 'blockEditor.asset.php');
+$Block_Editor_Script = new ScriptAsset(
     'plugdation-block-editor-assets',
-    'build/index.js',
+    'build/blockEditor/js/blockEditor.js',
     $asset_file['dependencies'],
     $asset_file['version']
 );
-$Register_Hooks->register($Block_Editor_Asset);
 
+$Register_Hooks->register($Block_Editor_Script);
 
 /**
  * Enqueue Block Editor Assets
@@ -103,6 +147,7 @@ $Register_Hooks->register($Block_Editor_Asset);
  * @see https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/
  */
 function enqueueBlockEditorAssets() {
-
+    wp_enqueue_script('plugdation-block-editor-assets');
+    wp_enqueue_style('plugdation-block-editor-assets');
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\' . 'enqueueBlockEditorAssets' );
