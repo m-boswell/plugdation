@@ -52,6 +52,12 @@ abstract class Asset implements actions
     protected $version;
 
     /**
+     * Path to the asset file.
+     * @var string
+     */
+    protected $path;
+
+    /**
      * Assets constructor.
      * @param string $handle
      * @param string $src
@@ -63,6 +69,7 @@ abstract class Asset implements actions
         $this->handle = $handle;
         $this->src = plugins_url( PLUGIN_DIRECTORY_NAME, PLUGIN_DIR ) . '/' . $src ;
         $this->deps = $deps;
+        $this->path = PLUGIN_DIR . DIRECTORY_SEPARATOR  .  $src;
         $this->version = $version ?? filemtime( PLUGIN_DIR . DIRECTORY_SEPARATOR  .  $src );
     }
 

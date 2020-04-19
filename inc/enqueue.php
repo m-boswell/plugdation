@@ -19,14 +19,8 @@ $Frontend_Style = new StyleAsset('plugdation-frontend', 'build/frontend/css/fron
 $Register_Hooks->register($Frontend_Style);
 
 // javascript
-$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
-    DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR .'frontend.asset.php');
-$Frontend_Script = new ScriptAsset(
-    'plugdation-frontend',
-    'build/frontend/js/frontend.js',
-    $asset_file['dependencies'],
-    $asset_file['version']
-);
+$Frontend_Script = new ScriptAsset('plugdation-frontend', 'build/frontend/js/frontend.js');
+$Frontend_Script->includeAssetInfoFile();
 $Register_Hooks->register($Frontend_Script);
 
 /**
@@ -55,14 +49,8 @@ $Admin_Style = new StyleAsset('plugdation-admin', 'build/admin/css/admin.css');
 $Register_Hooks->register($Admin_Style);
 
 // javascript
-$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
-    DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR. 'admin.asset.php');
-$Admin_Script = new ScriptAsset(
-    'plugdation-admin',
-    'build/admin/js/admin.js',
-    $asset_file['dependencies'],
-    $asset_file['version']
-);
+$Admin_Script = new ScriptAsset('plugdation-admin', 'build/admin/js/admin.js');
+$Admin_Script->includeAssetInfoFile();
 $Register_Hooks->register($Admin_Script);
 
 /**
@@ -92,14 +80,8 @@ $Block_Style = new StyleAsset('plugdation-block-assets', 'build/block/css/block.
 $Register_Hooks->register($Block_Style);
 
 // javascript
-$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
-    DIRECTORY_SEPARATOR . 'block' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'block.asset.php');
-$Block_Script = new ScriptAsset(
-    'plugdation-block-assets',
-    'build/block/js/block.js',
-    $asset_file['dependencies'],
-    $asset_file['version']
-);
+$Block_Script = new ScriptAsset('plugdation-block-assets', 'build/block/js/block.js');
+$Block_Script->includeAssetInfoFile();
 $Register_Hooks->register($Block_Script);
 
 /**
@@ -129,15 +111,8 @@ $Block_Editor_Style = new StyleAsset('plugdation-block-editor-assets', 'build/bl
 $Register_Hooks->register($Block_Editor_Style);
 
 // javascript
-$asset_file = include( \Plugdation\Plugdation\BUILD_PATH .
-    DIRECTORY_SEPARATOR . 'blockEditor' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR. 'blockEditor.asset.php');
-$Block_Editor_Script = new ScriptAsset(
-    'plugdation-block-editor-assets',
-    'build/blockEditor/js/blockEditor.js',
-    $asset_file['dependencies'],
-    $asset_file['version']
-);
-
+$Block_Editor_Script = new ScriptAsset('plugdation-block-editor-assets', 'build/blockEditor/js/blockEditor.js');
+$Block_Editor_Script->includeAssetInfoFile();
 $Register_Hooks->register($Block_Editor_Script);
 
 /**
