@@ -4,49 +4,66 @@
 namespace Plugdation\Plugdation\assets;
 
 use Plugdation\Plugdation\hooks\actions;
+use const Plugdation\Plugdation\PLUGIN_DIR;
+use const Plugdation\Plugdation\PLUGIN_DIRECTORY_NAME;
 
+/**
+ * Class Asset
+ *
+ * Base abstract class for management of assets such as javascript scripts and CSS stylesheets.
+ *
+ * @package Plugdation\Plugdation\assets
+ */
 abstract class Asset implements actions
 {
     /**
-     * string
+     * Wordpress Hook to register the asset.
+     * @see https://developer.wordpress.org/plugins/hooks/
+     * @var string
      */
     protected $tag = 'init';
+
     /**
+     * Name of the asset. Should be unique.
      * @var string
      */
     protected $handle;
 
     /**
+     * Asset path relative to \Plugdation\Plugdation\PLUGIN_DIR.
      * @var string
      */
     protected $src;
+
     /**
-     * @var array
+     * An array of asset handles this asset depends on.
+     * @var string[]
      */
     protected $deps;
+
     /**
+     * Version number. If no version number is provided
+     * a random one is generated with each change to the
+     * asset file. Each version is used for caching and
+     * therefore each file change would cause "cache busting".
+     *
      * @var string
      */
     protected $version;
-    /**
-     * @var string
-     */
-    private $dir = \Plugdation\Plugdation\PLUGIN_DIR;
-
 
     /**
      * Assets constructor.
      * @param string $handle
      * @param string $src
-     * @param array $deps
+     * @param string[] $deps
      * @param string $version
      */
-    public function __construct($handle, $src, array $deps = array(), $version = '')
+    public function __construct(string $handle, string $src, array $deps = [], string $version = '')
     {
         $this->handle = $handle;
-        $this->src = \Plugdation\Plugdation\PLUGIN_URL . "/$src" ;
+        $this->src = plugins_url( PLUGIN_DIRECTORY_NAME, PLUGIN_DIR ) . '/' . $src ;
         $this->deps = $deps;
-        $this->version = $version ?? filemtime( \Plugdation\Plugdation\PLUGIN_DIR . DIRECTORY_SEPARATOR  .  $src );
+        $this->version = $version ?? filemtime( PLUGIN_DIR . DIRECTORY_SEPARATOR  .  $src );
     }
 
     /**
@@ -57,6 +74,10 @@ abstract class Asset implements actions
         return $this->handle;
     }
 
+    /**
+     * Use this as wrapper to register a wordpress asset such as a script or stylesheet.
+     * @return null
+     */
     abstract function registerAsset();
 
     /**

@@ -2,7 +2,7 @@
 namespace Plugdation\Plugdation;
 
 const PLUGIN_NAME = 'plugdation';
-
+const PLUGIN_DIRECTORY_NAME = 'plugdation' ;
 /**
  * Private global file paths.
  *
@@ -13,7 +13,7 @@ const PLUGIN_NAME = 'plugdation';
  */
 define('_PLUGDATION_THIS_PATH', dirname(__FILE__));
 define('_PLUGDATION_PLUGIN_DIR', dirname(_PLUGDATION_THIS_PATH));
-define('_PLUGDATION_PLUGIN_URL', plugins_url(PLUGIN_NAME, _PLUGDATION_PLUGIN_DIR));
+define('_PLUGDATION_PLUGIN_URL', plugins_url(PLUGIN_DIRECTORY_NAME, _PLUGDATION_PLUGIN_DIR));
 
 /**
  * public namespaced constants.
