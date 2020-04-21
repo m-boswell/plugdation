@@ -3,6 +3,8 @@
 
 namespace Plugdation\Plugdation\assets;
 
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
+
 use Plugdation\Plugdation\hooks\actions;
 use const Plugdation\Plugdation\PLUGIN_DIR;
 use const Plugdation\Plugdation\PLUGIN_DIRECTORY_NAME;
