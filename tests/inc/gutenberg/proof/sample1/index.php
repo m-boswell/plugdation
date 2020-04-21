@@ -2,10 +2,10 @@
 
 namespace Plugdation\tests\inc\gutenberg\proof\sample1;
 
-use Plugdation\Plugdation\assets\ScriptAsset;
-use Plugdation\Plugdation\assets\StyleAsset;
-use Plugdation\Plugdation\gutenberg\BlockBuilder;
-use Plugdation\Plugdation\hooks\RegisterHooks;
+use Plugdation\assets\ScriptAsset;
+use Plugdation\assets\StyleAsset;
+use Plugdation\gutenberg\BlockBuilder;
+use Plugdation\hooks\RegisterHooks;
 
 /**
  * Config

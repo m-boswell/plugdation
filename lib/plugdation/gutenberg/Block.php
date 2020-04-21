@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Plugdation\Plugdation\gutenberg;
+namespace Plugdation\gutenberg;
 
-use Plugdation\Plugdation\hooks\actions;
+use Plugdation\hooks\actions;
 
 /**
  * Class Block
- * @package Plugdation\Plugdation\gutenberg
+ * @package Plugdation\gutenberg
  */
 class Block implements actions
 {

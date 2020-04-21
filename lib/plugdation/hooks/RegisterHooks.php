@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Plugdation\Plugdation\hooks;
+namespace Plugdation\hooks;
 
 /**
  * Class RegisterHooks
@@ -9,7 +9,7 @@ namespace Plugdation\Plugdation\hooks;
  *
  * @see https://codex.wordpress.org/Plugin_API
  * @see https://developer.wordpress.org/plugins/
- * @package Plugdation\Plugdation\hooks
+ * @package Plugdation\hooks
  */
 class RegisterHooks {
 

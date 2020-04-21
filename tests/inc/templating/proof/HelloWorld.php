@@ -4,7 +4,7 @@
 namespace Plugdation\tests\templating\proof;
 
 
-use Plugdation\Plugdation\templating\Render;
+use Plugdation\templating\Render;
 
 class HelloWorld extends Render
 {

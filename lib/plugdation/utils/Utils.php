@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Plugdation\Plugdation\utils;
+namespace Plugdation\utils;
 
 
 class Utils
 {
-    
+
 }

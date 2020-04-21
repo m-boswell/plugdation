@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Plugdation\Plugdation\assets;
+namespace Plugdation\assets;
 
 /**
  * Class StyleAsset
@@ -9,7 +9,7 @@ namespace Plugdation\Plugdation\assets;
  * Used for registering stylesheet assets. Thin wrapper of \wp_register_script().
  *
  * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style/
- * @package Plugdation\Plugdation\assets
+ * @package Plugdation\assets
  */
 class StyleAsset extends Asset
 {

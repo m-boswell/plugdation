@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Plugdation\Plugdation\hooks;
+namespace Plugdation\hooks;
 
 /**
  * Interface actions
- * @package Plugdation\Plugdation\hooks
+ * @package Plugdation\hooks
  */
 interface actions {
 

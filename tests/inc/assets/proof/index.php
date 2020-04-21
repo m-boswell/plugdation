@@ -1,9 +1,9 @@
 <?php
 namespace Plugdation\tests\inc\assets\proof;
 
-use Plugdation\Plugdation\assets\ScriptAsset;
-use Plugdation\Plugdation\assets\StyleAsset;
-use Plugdation\Plugdation\hooks\RegisterHooks;
+use Plugdation\assets\ScriptAsset;
+use Plugdation\assets\StyleAsset;
+use Plugdation\hooks\RegisterHooks;
 
 $Register_Hooks = new RegisterHooks();
 $Script_Asset = new ScriptAsset('asset-test', 'tests/inc/assets/proof/test.js');

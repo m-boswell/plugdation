@@ -1,9 +1,9 @@
 <?php
-namespace Plugdation\Plugdation;
+namespace Plugdation;
 
-use Plugdation\Plugdation\assets\ScriptAsset;
-use Plugdation\Plugdation\assets\StyleAsset;
-use Plugdation\Plugdation\hooks\RegisterHooks;
+use Plugdation\assets\ScriptAsset;
+use Plugdation\assets\StyleAsset;
+use Plugdation\hooks\RegisterHooks;
 
 $Register_Hooks = new RegisterHooks();
 

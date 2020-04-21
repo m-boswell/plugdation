@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Plugdation\Plugdation\gutenberg;
+namespace Plugdation\gutenberg;
 
 class BlockBuilder
 {

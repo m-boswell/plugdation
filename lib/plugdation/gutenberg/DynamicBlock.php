@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Plugdation\Plugdation\gutenberg;
+namespace Plugdation\gutenberg;
 
 
-use Plugdation\Plugdation\gutenberg\Block;
+use Plugdation\gutenberg\Block;
 
 abstract class DynamicBlock extends Block
 {

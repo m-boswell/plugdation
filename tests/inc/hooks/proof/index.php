@@ -2,7 +2,7 @@
 
 namespace Plugdation\tests\inc\hooks\proof;
 
-use Plugdation\Plugdation\hooks\RegisterHooks;
+use Plugdation\hooks\RegisterHooks;
 
 
 

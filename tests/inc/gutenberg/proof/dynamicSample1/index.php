@@ -2,9 +2,9 @@
 
 namespace Plugdation\tests\inc\gutenberg\proof\dynamicSample1;
 
-use Plugdation\Plugdation\assets\ScriptAsset;
-use Plugdation\Plugdation\assets\StyleAsset;
-use Plugdation\Plugdation\hooks\RegisterHooks;
+use Plugdation\assets\ScriptAsset;
+use Plugdation\assets\StyleAsset;
+use Plugdation\hooks\RegisterHooks;
 
 /**
  * Config

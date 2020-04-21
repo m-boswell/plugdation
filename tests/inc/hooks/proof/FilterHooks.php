@@ -4,7 +4,7 @@
 namespace Plugdation\tests\inc\hooks\proof;
 
 
-use Plugdation\Plugdation\hooks\filters;
+use Plugdation\hooks\filters;
 
 class FilterHooks implements filters
 {

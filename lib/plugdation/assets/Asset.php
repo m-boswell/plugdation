@@ -1,20 +1,20 @@
 <?php
 
 
-namespace Plugdation\Plugdation\assets;
+namespace Plugdation\assets;
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config.php';
 
-use Plugdation\Plugdation\hooks\actions;
-use const Plugdation\Plugdation\PLUGIN_DIR;
-use const Plugdation\Plugdation\PLUGIN_DIRECTORY_NAME;
+use Plugdation\hooks\actions;
+use const Plugdation\PLUGIN_DIR;
+use const Plugdation\PLUGIN_DIRECTORY_NAME;
 
 /**
  * Class Asset
  *
  * Base abstract class for management of assets such as javascript scripts and CSS stylesheets.
  *
- * @package Plugdation\Plugdation\assets
+ * @package Plugdation\assets
  */
 abstract class Asset implements actions
 {
@@ -32,7 +32,7 @@ abstract class Asset implements actions
     protected $handle;
 
     /**
-     * Asset path relative to \Plugdation\Plugdation\PLUGIN_DIR.
+     * Asset path relative to \Plugdation\PLUGIN_DIR.
      * @var string
      */
     protected $src;

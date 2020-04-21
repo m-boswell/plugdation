@@ -1,5 +1,5 @@
 <?php
-namespace Plugdation\Plugdation;
+namespace Plugdation;
 
 const PLUGIN_DIRECTORY_NAME = 'plugdation' ;
 
@@ -11,12 +11,11 @@ const PLUGIN_DIRECTORY_NAME = 'plugdation' ;
  * * dirname() Returns a parent directory's path
  * * plugins_url() Retrieves a URL within the plugins or mu-plugins directory.
  */
-define('_PD_THIS_PATH', dirname(__FILE__));
-define('_PD_PLUGDATION_PATH', dirname(_PD_THIS_PATH));
-define('_PD_LIB_PATH', dirname(_PD_PLUGDATION_PATH));
-define('_PD_PLUGIN_PATH', dirname(_PD_LIB_PATH));
+define('_PD_PLUGDATION_DIR', dirname(__FILE__));
+define('_PD_PLUGDATION_LIB_DIR', dirname(_PD_PLUGDATION_DIR));
+define('_PD_PLUGIN_DIR', dirname(_PD_PLUGDATION_LIB_DIR));
 
 /**
  * public namespaced constants.
  */
-const PLUGIN_DIR = _PD_PLUGIN_PATH;
+const PLUGIN_DIR = _PD_PLUGIN_DIR;

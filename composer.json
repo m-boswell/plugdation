@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Plugdation\\Plugdation\\": "lib",
+            "Plugdation\\": "lib/plugdation",
             "Plugdation\\app\\": "app",
             "Plugdation\\tests\\": "tests"
         }

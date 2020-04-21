@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Plugdation\Plugdation\assets;
+namespace Plugdation\assets;
 
 
-use const Plugdation\Plugdation\PLUGIN_DIR;
+use const Plugdation\PLUGIN_DIR;
 
 /**
  * Class ScriptAsset
@@ -12,7 +12,7 @@ use const Plugdation\Plugdation\PLUGIN_DIR;
  * Used for registering script assets. Thin wrapper of \wp_register_script().
  *
  * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script/
- * @package Plugdation\Plugdation\assets
+ * @package Plugdation\assets
  */
 class ScriptAsset extends Asset
 {
