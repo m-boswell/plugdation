@@ -8,9 +8,11 @@ module.exports = {
     ...defaultConfig,
     entry: {
         block: path.resolve( process.cwd(), 'src/blocks/block-assets/', 'index.js' ),
-        blockEditor: path.resolve( process.cwd(), 'src/blocks/block-editor-assets/', 'index.js' ),
-        frontend: path.resolve( process.cwd(), 'src/frontend/', 'index.js' ),
-        admin: path.resolve( process.cwd(), 'src/admin/', 'index.js' ),
+        "block-editor": path.resolve( process.cwd(), 'src/blocks/block-editor-assets/', 'index.js' ),
+        frontend: path.resolve( process.cwd(), 'src/frontend/top', 'index.js' ),
+        "frontend-footer": path.resolve( process.cwd(), 'src/frontend/bottom', 'index.js' ),
+        admin: path.resolve( process.cwd(), 'src/admin/top', 'index.js' ),
+        "admin-footer": path.resolve( process.cwd(), 'src/admin/bottom', 'index.js' ),
     },
     output: {
         filename: '[name]/js/[name].js',

@@ -6,9 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
  * Main App File.
+ *
  * Place Wordpress interfacing code here as well as any other site files.
- * It is best practice to separate code into directories and then include them here.
  */
 
-include __DIR__ . './example/blocks/index.php';
+include __DIR__ . '/example/index.php';
 

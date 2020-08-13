@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-import { RichText } from "@wordpress/editor";
+const { RichText } = wp.editor;
 
 registerBlockType("plugdation/sample-jsx", {
     title: __("Plugdation Example JSX Block", "plugdation"),

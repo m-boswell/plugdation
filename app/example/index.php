@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugdation\App\example;
+namespace example;
 
 // disable direct file access
 if (!defined('ABSPATH')) {
@@ -11,4 +11,4 @@ if (!defined('ABSPATH')) {
  * Example App Files.
  */
 
-include __DIR__ . './blocks/index.php';
+include __DIR__ . '/blocks/index.php';

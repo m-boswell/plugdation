@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugdation\app\blocks;
+namespace example;
 
 // disable direct file access
 if ( ! defined( 'ABSPATH' ) ) { exit; }

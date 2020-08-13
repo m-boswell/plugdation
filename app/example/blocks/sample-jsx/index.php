@@ -1,17 +1,11 @@
 <?php
 
-namespace Plugdation\app\blocks;
+namespace example;
 
 // disable direct file access
+use const Plugdation\HANDLE_BLOCK_EDITOR_BUNDLE;
+
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-
-
-namespace Plugdation\app\blocks;
-
-// disable direct file access
-if (!defined('ABSPATH')) {
-    exit;
-}
 
 /**
  * Functions to register client-side assets (scripts and stylesheets) for the
@@ -34,8 +28,9 @@ function sampleJsxBlockInit()
     }
 
     register_block_type('plugdation/sample-jsx', array(
-        'editor_script' => 'plugdation-block-editor-assets'
+        'editor_script' => HANDLE_BLOCK_EDITOR_BUNDLE
     ));
+
 }
 
 add_action('init', __NAMESPACE__ . '\\' . 'sampleJsxBlockInit');

@@ -1,6 +1,3 @@
 /vendor/
 /node_modules/
 /build/
-/app/*
-!/app/example/
-!/app/index.php

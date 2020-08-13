@@ -11,18 +11,16 @@ License:      MIT License
 License URI:  https://opensource.org/licenses/MIT
 */
 
-
+namespace Plugdation;
 
 
 // disable direct file access
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-require_once __DIR__ . './vendor/autoload.php';                 // composer PSR-4 autoload.
-//require_once __DIR__ . './inc/config.php';                      // plugin constants.
-require_once __DIR__ . './inc/enqueue.php';                     // enqueuing assets.
-require_once __DIR__ . './app/index.php';                       // main plugin folder.
-
-
-
-// Uncomment to test proof of concepts
-// include_once __DIR__ . './tests/proofs.php';
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/inc/config.php';
+require_once __DIR__ . '/inc/enqueues/globals.php';
+require_once __DIR__ . '/inc/enqueues/bundles.php';
+require_once __DIR__ . '/inc/hooks.php';
+require_once __DIR__ . '/inc/activation-deactivation.php';
+require_once __DIR__ . '/app/index.php';
